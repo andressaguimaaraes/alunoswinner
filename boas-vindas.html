@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boas-Vindas · Winner IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{--black:#101010;--ink:#1c1c1c;--gold:#C8A24A;--gold-deep:#A6873F;--gold-soft:#F4ECD8;--gold-line:#E7D9B4;--paper:#FFF;--mist:#FAF8F3;--line:#ECECEC;--muted:#6E6E6E;--shadow-lg:0 12px 50px rgba(16,16,16,.16)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:780px;margin:0 auto;padding:0 24px}
+  header{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:50}
+  .topbar{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:780px;margin:0 auto;padding:0 24px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .logo{width:38px;height:38px}
+  .wordmark{font-weight:800;font-size:21px;letter-spacing:-.02em;color:var(--black)}
+  .wordmark .ia{color:var(--gold)}
+  .nav-tag{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .hero{padding:52px 0 8px;text-align:left}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:16px}
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--gold);border-radius:2px}
+  h1{font-size:clamp(30px,5vw,46px);font-weight:900;letter-spacing:-.03em;line-height:1.05;color:var(--black)}
+  h1 em{font-style:normal;color:var(--gold)}
+  .lede{margin-top:16px;font-size:17px;color:#4a4a4a;max-width:60ch}
+  .cards{display:flex;flex-direction:column;gap:16px;margin:34px 0 10px}
+  .vcard{display:flex;align-items:flex-start;gap:18px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 24px;transition:transform .16s,box-shadow .16s,border-color .16s;position:relative;overflow:hidden}
+  .vcard::after{content:"";position:absolute;left:0;top:0;height:100%;width:4px;background:var(--gold)}
+  .vcard:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--gold)}
+  .vcard .ic{width:54px;height:54px;border-radius:14px;background:var(--gold-soft);display:grid;place-items:center;font-size:25px;flex-shrink:0}
+  .vcard.dark{background:var(--black);border-color:var(--black)}
+  .vcard.dark::after{background:var(--gold)}
+  .vcard.dark .ic{background:rgba(255,255,255,.1)}
+  .vcard.dark h3{color:#fff}.vcard.dark p{color:#cfcfcf}
+  .vcard .n{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-deep)}
+  .vcard.dark .n{color:var(--gold)}
+  .vcard h3{font-size:19px;font-weight:800;color:var(--black);letter-spacing:-.01em;margin-top:3px}
+  .vcard p{font-size:14px;color:#555;margin-top:5px;line-height:1.5}
+  .vcard .row{display:flex;align-items:center;gap:10px;margin-top:14px;flex-wrap:wrap}
+  .vcard .go{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:700;color:#fff;background:var(--black);padding:10px 16px;border-radius:10px;transition:background .15s}
+  .vcard .go:hover{background:#000}
+  .vcard.dark .go{background:var(--gold);color:#101010}.vcard.dark .go:hover{background:#d8b25c}
+  .vcard .go svg{transition:transform .16s}.vcard:hover .go svg{transform:translateX(3px)}
+  .pwd{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:var(--gold-deep);background:var(--gold-soft);padding:9px 13px;border-radius:10px}
+  .vcard.dark .pwd{background:rgba(200,162,74,.16);color:var(--gold)}
+  .vcard .arrself{margin-left:auto;align-self:center;color:var(--gold);flex-shrink:0}
+  footer{border-top:1px solid var(--line);margin-top:44px;padding:26px 0 44px;color:var(--muted);font-size:13px}
+  .footer-row{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<header>
+  <div class="topbar">
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 100 100"><path d="M16 15 L35 15 L50 70 L65 15 L84 15 L60 92 L40 92 Z" fill="#101010"/><circle cx="83" cy="22" r="9" fill="#C8A24A"/></svg>
+      <span class="wordmark">winner<span class="ia">.ia</span></span>
+    </div>
+    <span class="nav-tag">Boas-vindas</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <span class="eyebrow">Programa de Aceleração em I.A.</span>
+    <h1>Bem-vindo à <em>mentoria Winner IA</em></h1>
+    <p class="lede">Tudo o que você precisa para começar com o pé direito. Acesse o curso, o manual e preencha o formulário da reunião de boas-vindas antes da primeira consultoria.</p>
+  </section>
+
+  <section class="cards">
+
+    <a class="vcard" href="https://members.kiwify.com/?club=04f64c9d-075c-4543-b44f-5fdeca907f51" target="_blank" rel="noopener">
+      <span class="ic">🎓</span>
+      <div>
+        <span class="n">Passo 1</span>
+        <h3>Curso Claude Sem Código</h3>
+        <p>O básico do Claude na prática, em aulas rápidas e diretas ao ponto. Assista antes da primeira consultoria.</p>
+        <div class="row">
+          <span class="go">Acessar o curso <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span class="pwd">🔑 Senha: seu login Kiwify</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="vcard" href="https://materialalunos.winneria.com.br/" target="_blank" rel="noopener">
+      <span class="ic">📘</span>
+      <div>
+        <span class="n">Passo 2</span>
+        <h3>Manual do Aluno</h3>
+        <p>Material escrito com o essencial: Claude, Cowork, Code e os conceitos-chave da mentoria.</p>
+        <div class="row">
+          <span class="go">Acessar o manual <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span class="pwd">🔑 Senha: programaia2026</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="vcard dark" href="mapa-estrategico.html">
+      <span class="ic">🗺️</span>
+      <div>
+        <span class="n">Passo 3</span>
+        <h3>Formulário da reunião de boas-vindas</h3>
+        <p>O Mapa Estratégico de IA — 12 perguntas que são a base do seu plano de mentoria. Preencha direto aqui e exporte em PDF para enviar.</p>
+        <div class="row">
+          <span class="go">Preencher e exportar PDF <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>winner<span style="color:var(--gold);font-weight:700">.ia</span> &nbsp;·&nbsp; Material de Boas-Vindas</span>
+    <a class="nav-tag" href="index.html">Gestão de Alunos →</a>
+  </div>
+</footer>
+</body>
+</html>
