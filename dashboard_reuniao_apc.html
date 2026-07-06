@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Almeida Pessoa e Caldas — Resumo da Reunião</title>
+<style>
+  :root {
+    --purple: #6d5bd0;
+    --purple-light: #ede9fb;
+    --ink: #1f2430;
+    --gray: #6b7280;
+    --border: #e5e7eb;
+    --bg: #f7f7fb;
+    --green: #16a34a;
+    --amber: #b45309;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    padding: 32px 20px 60px;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; }
+
+  header {
+    margin-bottom: 28px;
+  }
+  .date-pill {
+    display: inline-block;
+    background: var(--purple-light);
+    color: var(--purple);
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-size: 28px;
+    margin: 0 0 10px;
+    letter-spacing: -0.02em;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    font-size: 13.5px;
+    color: var(--gray);
+  }
+  .meta span { display: flex; align-items: center; gap: 6px; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gray); }
+
+  .card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 18px;
+  }
+  .card h2 {
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--gray);
+    margin: 0 0 14px;
+  }
+
+  .summary-text {
+    font-size: 15.5px;
+    line-height: 1.6;
+  }
+
+  .priority-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 700px) { .priority-grid { grid-template-columns: 1fr; } }
+  .priority {
+    background: var(--purple-light);
+    border-radius: 12px;
+    padding: 18px;
+  }
+  .priority .tag {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--purple);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .priority h3 {
+    margin: 8px 0 6px;
+    font-size: 17px;
+  }
+  .priority p {
+    margin: 0;
+    font-size: 13.5px;
+    color: #4b4770;
+    line-height: 1.5;
+  }
+  .deprioritized {
+    margin-top: 14px;
+    font-size: 13px;
+    color: var(--amber);
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-radius: 10px;
+    padding: 10px 14px;
+  }
+
+  .steps-list { display: flex; flex-direction: column; gap: 10px; }
+  .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+  }
+  .step .box {
+    width: 18px; height: 18px;
+    border: 2px solid #c7c9d9;
+    border-radius: 5px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .step .owner {
+    display: inline-block;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #fff;
+    background: var(--purple);
+    padding: 2px 9px;
+    border-radius: 999px;
+    margin-bottom: 5px;
+  }
+  .step .txt { font-size: 14px; line-height: 1.4; }
+  .step .txt b { font-weight: 600; }
+
+  details {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 8px;
+    overflow: hidden;
+  }
+  summary {
+    cursor: pointer;
+    padding: 13px 16px;
+    font-weight: 600;
+    font-size: 14.5px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: "+";
+    color: var(--purple);
+    font-size: 18px;
+    font-weight: 400;
+  }
+  details[open] summary::after { content: "−"; }
+  details[open] summary { border-bottom: 1px solid var(--border); }
+  .detail-body {
+    padding: 12px 16px 16px;
+    font-size: 13.8px;
+    line-height: 1.6;
+    color: #3b3f4b;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--gray);
+    margin-top: 24px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="date-pill">06 de julho de 2026 · 39 min</div>
+    <h1>Almeida Pessoa e Caldas</h1>
+    <div class="meta">
+      <span><span class="dot"></span>Lucas Lopes</span>
+      <span><span class="dot"></span>Felipe Caldas</span>
+      <span><span class="dot"></span>Jéssica Almeida</span>
+      <span><span class="dot"></span>Lazaro Pessoa</span>
+    </div>
+  </header>
+
+  <div class="card">
+    <h2>Resumo</h2>
+    <p class="summary-text">
+      A reunião definiu o foco estratégico do escritório para os próximos meses: <b>integração com o sistema Astreia</b>
+      e <b>capacitação técnica em Cloud Code</b>. A equipe optou por concentrar esforços em uma única frente por vez
+      para garantir resultados concretos, em vez de tentar automatizar tudo ao mesmo tempo.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Prioridades definidas</h2>
+    <div class="priority-grid">
+      <div class="priority">
+        <div class="tag">Prioridade 1</div>
+        <h3>Integração com Astreia</h3>
+        <p>Automatizar a triagem de e-mails e o cadastro de processos no Astreia, com IA sugerindo distribuição de tarefas conforme carga de trabalho e SLA (4h para dúvidas simples, 24–48h para questões técnicas).</p>
+      </div>
+      <div class="priority">
+        <div class="tag">Prioridade 2</div>
+        <h3>Capacitação em Cloud Code</h3>
+        <p>12 tutorias práticas para o time desenvolver internamente automações e integrações complexas, conduzidas por um especialista da equipe do Lucas.</p>
+      </div>
+    </div>
+    <div class="deprioritized">Diário de Justiça Eletrônico (DJE) — monitoramento automatizado ficou para um segundo momento.</div>
+  </div>
+
+  <div class="card">
+    <h2>Próximas etapas</h2>
+    <div class="steps-list">
+      <div class="step">
+        <div class="box"></div>
+        <div class="txt"><span class="owner">Lucas Lopes</span><br><b>Agendar tutorias</b> — definir e organizar os horários das 12 tutorias sobre Cloud Code com a equipe (quarta-feira de manhã).</div>
+      </div>
+      <div class="step">
+        <div class="box"></div>
+        <div class="txt"><span class="owner">Jéssica · Lazaro · Felipe</span><br><b>Assistir treinamentos</b> — estudar as aulas introdutórias de Cloud Code na plataforma de cursos antes das tutorias.</div>
+      </div>
+      <div class="step">
+        <div class="box"></div>
+        <div class="txt"><span class="owner">Jéssica Almeida</span><br><b>Consultar suporte Astreia</b> — perguntar ao suporte técnico sobre integração via API ou MCP.</div>
+      </div>
+      <div class="step">
+        <div class="box"></div>
+        <div class="txt"><span class="owner">Lucas Lopes</span><br><b>Atualizar acesso à plataforma</b> — cadastrar e liberar o acesso de todos os membros do escritório na plataforma de cursos.</div>
+      </div>
+      <div class="step">
+        <div class="box"></div>
+        <div class="txt"><span class="owner">Felipe Caldas</span><br><b>Reenviar lista de e-mails</b> — enviar lista atualizada com os e-mails do time para cadastro na plataforma de treinamentos.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Tópicos discutidos</h2>
+
+    <details>
+      <summary>Status atual e descobertas iniciais</summary>
+      <div class="detail-body">Desde o encontro anterior, o time não implementou automações, mas identificou possíveis melhorias: automação de atendimentos via WhatsApp e verificação de publicações no PJE.</div>
+    </details>
+
+    <details>
+      <summary>Automação de e-mails e integração com o Astreia</summary>
+      <div class="detail-body">A IA faria a triagem inicial dos e-mails e sugeriria a distribuição de tarefas para advogados com menor carga, respeitando SLA de 4h (dúvidas simples) e 24–48h (questões técnicas). O WhatsApp deve seguir os mesmos prazos e fluxos do e-mail.</div>
+    </details>
+
+    <details>
+      <summary>Monitoramento do Diário de Justiça Eletrônico (DJE)</summary>
+      <div class="detail-body">O DJE é o meio oficial de comunicação processual, mas costuma ser ignorado pelas empresas. A equipe quer automatizar seu monitoramento para evitar perda de prazos — trata-se de responsabilidade distinta do uso do PJE, que foca na gestão processual. Ficou para uma segunda etapa.</div>
+    </details>
+
+    <details>
+      <summary>Automação de processos no Astreia</summary>
+      <div class="detail-body">Hoje o sistema OST monitora processos, mas o cadastro no Astreia e a criação de atividades são manuais. A proposta é que a IA cadastre o processo automaticamente, organize arquivos no drive e gere checklists pré-definidos — sempre com validação humana da controladoria antes da distribuição final.</div>
+    </details>
+
+    <details>
+      <summary>Estratégia de defesa e ferramentas Cloud</summary>
+      <div class="detail-body">Com acesso ao PJE, a IA poderia analisar o processo do lado do cliente (parte ré) e sugerir estratégias de defesa e documentos necessários. Foram esclarecidas as diferenças entre Cloud Chat, Cloud Work (automações simples) e Cloud Code (desenvolvimento e automações complexas) — foco do treinamento do time.</div>
+    </details>
+
+    <details>
+      <summary>Agendamento e acesso à plataforma de ensino</summary>
+      <div class="detail-body">Tutorias marcadas para quarta-feira de manhã. Houve dificuldade de acesso à plataforma de cursos por problema no e-mail cadastrado (em correção). Cloud Code exige computador — não é possível desenvolver via iPad.</div>
+    </details>
+
+    <details>
+      <summary>Integração via API com o Astreia</summary>
+      <div class="detail-body">A equipe vai buscar diretamente com o suporte do Astreia informações sobre integração via API ou MCP. Jéssica alertou que o suporte costuma informar que não há previsão de abertura de API — o time seguirá alinhando qualquer tentativa paralela com Lucas via grupo de mensagens.</div>
+    </details>
+
+  </div>
+
+  <footer>Gerado a partir das anotações do Gemini · Reunião de 06/07/2026</footer>
+</div>
+</body>
+</html>
