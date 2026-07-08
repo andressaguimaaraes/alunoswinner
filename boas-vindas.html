@@ -28,7 +28,7 @@
     display:flex;align-items:center;gap:9px;margin-bottom:14px}
   .eab .sq{width:15px;height:15px;border-radius:5px;background:var(--gold)}
   /* steps as notes checklist rows */
-  .step{display:flex;gap:15px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--hair);transition:opacity .15s}
+  .step{display:flex;gap:15px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--hair);transition:opacity .15s;cursor:pointer;width:100%;text-align:left;background:none;border-left:none;border-right:none;border-top:none;font:inherit;color:inherit}
   .step:last-child{border-bottom:none}
   .step:hover{opacity:.72}
   .ico{width:42px;height:42px;border-radius:12px;background:var(--gold-soft);display:grid;place-items:center;
@@ -44,7 +44,33 @@
   .key{font-size:12px;color:var(--gray);display:inline-flex;align-items:center;gap:5px}
   .chev{align-self:center;color:var(--gray2);flex:none}
   .foot{color:var(--gray2);font-size:12px;margin-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-  @media(max-width:520px){.note{padding:30px 22px}}
+  /* modal */
+  .overlay{position:fixed;inset:0;background:rgba(28,28,30,.45);backdrop-filter:blur(3px);
+    display:none;align-items:center;justify-content:center;padding:20px;z-index:100}
+  .overlay.open{display:flex}
+  .modal{background:var(--card);border-radius:18px;max-width:560px;width:100%;max-height:88vh;overflow-y:auto;
+    padding:32px 34px 30px;box-shadow:0 24px 70px rgba(30,20,0,.28);position:relative;
+    animation:pop .18s ease}
+  @keyframes pop{from{transform:translateY(8px) scale(.98);opacity:0}to{transform:none;opacity:1}}
+  .close{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:50%;border:none;
+    background:#F0EEE7;color:#555;font-size:17px;cursor:pointer;display:grid;place-items:center;line-height:1}
+  .close:hover{background:#E6E3D9}
+  .modal .mk{font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep)}
+  .modal h2{font-size:22px;font-weight:800;letter-spacing:-.02em;margin-top:5px}
+  .modal .intro{font-size:14.5px;color:#48474b;margin-top:12px}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 4px}
+  .flow span{font-size:12.5px;font-weight:700;background:var(--gold-soft);color:var(--gold-deep);padding:6px 11px;border-radius:20px}
+  .flow b{color:var(--gray2);align-self:center;font-weight:700}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+  .mcard{border:1px solid var(--hair);border-radius:13px;padding:15px 16px;background:#FCFBF7}
+  .mcard .t{font-size:15px;font-weight:800}
+  .mcard .who{font-size:11.5px;font-weight:700;color:var(--gold-deep);margin-top:1px}
+  .mcard ul{list-style:none;margin-top:9px}
+  .mcard li{font-size:13px;color:#3a3a3c;padding:3px 0 3px 14px;position:relative}
+  .mcard li::before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+  .mnote{font-size:13px;color:var(--gray);margin-top:16px;background:#FAF8F1;border-radius:11px;padding:12px 14px}
+  .mnote b{color:var(--ink)}
+  @media(max-width:520px){.note{padding:30px 22px}.two{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -56,7 +82,7 @@
 
     <div class="date">Programa de Aceleração em I.A.</div>
     <h1>Bem-vindo à mentoria Winner IA</h1>
-    <p class="lead">Tudo o que você precisa para começar com o pé direito. Acesse o curso e o manual antes da primeira consultoria.</p>
+    <p class="lead">Tudo o que você precisa para começar com o pé direito. Acesse o curso, o manual, preencha o formulário e entenda como a mentoria funciona.</p>
 
     <hr class="rule">
     <div class="eab"><span class="sq"></span>Comece por aqui</div>
@@ -89,10 +115,82 @@
       <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
     </a>
 
+    <a class="step" href="https://docs.google.com/forms/d/e/1FAIpQLSc5ecOuqW7LSJVboXmm_FwTZLfCp_kBeAqaUi3JNi4pW6uXoA/viewform?usp=sharing&ouid=107255638232557297524" target="_blank" rel="noopener">
+      <span class="ico">📝</span>
+      <div class="c">
+        <div class="n">Passo 3</div>
+        <h3>Formulário do Mapa Estratégico</h3>
+        <p>As perguntas que são a base do seu plano de mentoria. Preencha antes da primeira consultoria.</p>
+        <div class="row">
+          <span class="go">Preencher o formulário <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+      <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </a>
+
+    <hr class="rule">
+    <div class="eab"><span class="sq"></span>Entenda a mentoria</div>
+
+    <button class="step" onclick="openModal()">
+      <span class="ico">🧭</span>
+      <div class="c">
+        <div class="n">Como funciona</div>
+        <h3>Consultoria × Tutoria</h3>
+        <p>Em 1 minuto: como a mentoria funciona e a diferença entre os dois tipos de encontro.</p>
+        <div class="row">
+          <span class="go">Abrir explicação <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+      <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+
     <div class="foot">
       <span>winner<i style="color:var(--gold);font-style:normal;font-weight:700">.ia</i> · Material de Boas-Vindas</span>
       <span>Programa de Aceleração em I.A.</span>
     </div>
   </div>
+
+  <!-- Modal: como funciona -->
+  <div class="overlay" id="overlay" onclick="if(event.target===this)closeModal()">
+    <div class="modal" role="dialog" aria-modal="true">
+      <button class="close" onclick="closeModal()" aria-label="Fechar">✕</button>
+      <div class="mk">Mentoria Winner IA</div>
+      <h2>Como funciona, em 1 minuto</h2>
+      <p class="intro">A ideia é simples: <b>nós ensinamos e te entregamos um plano de ação</b>. Quem coloca em prática é a sua equipe — e a gente <b>acompanha de perto</b>, tirando as dúvidas no caminho. Você ganha autonomia, sem depender da gente para tudo.</p>
+
+      <div class="flow">
+        <span>Ensinamos</span><b>→</b><span>Plano de ação</span><b>→</b><span>Vocês executam</span><b>→</b><span>Acompanhamos</span>
+      </div>
+
+      <div class="two">
+        <div class="mcard">
+          <div class="t">Consultoria</div>
+          <div class="who">com o Lucas · estratégia</div>
+          <ul>
+            <li>Entende o seu projeto</li>
+            <li>Define onde a IA entra</li>
+            <li>Monta o plano do mês</li>
+          </ul>
+        </div>
+        <div class="mcard">
+          <div class="t">Tutoria</div>
+          <div class="who">com o time técnico</div>
+          <ul>
+            <li>Mão na massa na ferramenta</li>
+            <li>Resolve dúvidas e erros</li>
+            <li>Acompanha a execução</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mnote">💬 <b>Dúvidas rápidas?</b> Manda no grupo — sem precisar marcar reunião.</div>
+    </div>
+  </div>
+
+  <script>
+    function openModal(){document.getElementById('overlay').classList.add('open');document.body.style.overflow='hidden';}
+    function closeModal(){document.getElementById('overlay').classList.remove('open');document.body.style.overflow='';}
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+  </script>
 </body>
 </html>
